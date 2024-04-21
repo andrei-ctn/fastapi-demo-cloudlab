@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-import os
 
 app = FastAPI()
 
@@ -10,4 +9,5 @@ async def main():
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host=os.environ["HOST"], port=os.environ["PORT"])
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8080)
